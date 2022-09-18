@@ -1,0 +1,166 @@
+1.
+#include<stdio.h>
+int add(int);
+int main()
+{
+    int x,n;
+    printf("enter a number");
+    scanf("%d",&n);
+    x=add(n);
+    printf("%d",x);
+    return 0;
+}
+int add(int n)
+{
+    if(n==1)
+    return 1;
+    return (n+add(n-1));
+   // return (n*(n+1))/2;
+}
+2.
+#include<stdio.h>
+int odd(int);
+int main()
+{
+    int n;
+    printf("enter a number");
+    scanf("%d",&n);
+    odd(n);
+    printf("%d",odd(n));
+    return 0;
+}
+int odd(int n)
+{
+    if(n==1)
+    return 1;
+    return (n+odd(n-2));   
+}
+3.
+#include<stdio.h>
+int even(int);
+int main()
+{
+    int n;
+    printf("enter a number");
+    scanf("%d",&n);
+    even(n);
+    printf("%d",even(n));
+    return 0;
+}
+int even(int n)
+{
+    if(n==2)
+    return 2;
+    return (n+even(n-2));   
+}
+4.
+#include<stdio.h>
+int square(int);
+int main()
+{
+    printf("%d",square(5));
+    return 0;
+}
+int square(int n)
+{
+    if(n==1)
+    return 1;
+    return (n*n+square(n-1));
+    //return (n*(n+1)*(2*n+1))/6;
+}
+5.
+#include<stdio.h>
+int sum(int);
+int main()
+{
+    printf("%d",sum(12345));
+    return 0;
+}
+int sum(int n)
+{
+    if(n==1)
+    return 1;
+    return (sum(n/10)+n%10);
+}
+6.
+#include<stdio.h>
+int fact(int);
+int main()
+{
+    printf("%d",fact(5));
+    return 0;
+}
+int fact(int n)
+{
+    if (n==0 ||n==1)
+    return n;
+    return(n*fact(n-1));
+}
+7.
+#include<stdio.h>
+int hcf(int,int);
+int main()
+{
+    int a,b;
+    printf("enter a two number");
+    scanf("%d %d",&a,&b);
+    printf(" %d",hcf(b,a%b));
+    return 0;
+}
+int hcf(int a,int b)
+{
+    if(b==0)
+    return a;
+    return (b,a%b);  
+}
+8.
+#include<stdio.h>
+int fib(int);
+int main()
+{
+    int i;
+    for(i=0;i<=5;i++)
+    printf(" %d",fib(i));
+}
+int fib(int n)
+{
+    if(n==0 || n==1)
+    return n;
+    return (fib(n-1)+fib(n-2)); 
+}
+9.
+#include<stdio.h>
+int countdigit(int);
+int main()
+{
+    printf("%d",countdigit(16678879));
+    return 0;
+}
+ int count=0;
+int countdigit(int n)
+{
+    if(n==0)
+    return 0;
+    count++;
+     (countdigit(n/10));
+     return count;
+}
+10.
+#include<stdio.h>
+int po(int,int);
+int main()
+{
+    int b,p;
+    printf("enter a number");
+    scanf("%d %d",&b,&p);
+    printf(" %d",po(b,p));
+    return 0;
+}
+int po(int b, int p)
+{
+    int x=1;
+    if(p==0)
+    return 1;
+    x=b*(po(b,p-1));
+    return x;
+}
